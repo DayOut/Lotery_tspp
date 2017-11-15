@@ -4,10 +4,67 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+        <style>
+            body
+            {
+                background-color: #ffffff;
+            }
+
+            table
+            {
+                border-spacing: 0px;
+            }
+            .main
+            {
+                background-color: #ffffff;
+                margin: 0 auto;
+                height: 100%;
+                width: 60%;
+                min-width: 1000px;
+                min-height: 1000px;
+            }
+
+            .head
+            {
+                background-color: #1276CC;
+                height: 60px;
+                width: 100%;
+            }
+
+            td
+            {
+                min-width: 200px;
+            }
+        </style>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <table class = "main" id = "table">
+            <tr class = "head">
+                <td width = "20%"></td>
+                <td>2</td>
+                <td width = "20%">3</td>
+            </tr>
+
+            <tr>
+                <td bgcolor = "#ececec" id = "fourthTd">4</td>
+                <td style = "width: 700px; height: 100%;">
+                    {% block body %}{% endblock %}
+                    {% block javascripts %}{% endblock %}
+                </td>
+                <td bgcolor = "#ececec" id = "sixthTd">6</td>
+            </tr>
+
+
+        </table>
+
+    </body>
+
+
+
+
+
+
+
     </body>
 </html>
