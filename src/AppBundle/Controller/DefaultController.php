@@ -20,4 +20,24 @@ class DefaultController extends Controller
         ]);
         /*return Response("sad");*/
     }
+
+    /**
+     * @Route("/list", name="lotery_list")
+     */
+    public function loteryListAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/list.html.twig');
+        /*return Response("sad");*/
+    }
+
+    /**
+     * @Route("/result", name="result")
+     */
+    public function resultAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/result.html.twig');
+        /*return Response("sad");*/
+    }
 }

@@ -2,61 +2,101 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Лотерея{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
-        <style>
-            body
-            {
-                background-color: #ffffff;
-            }
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/>
+        <meta name="author" content=""/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" media="screen"/>
 
-            table
-            {
-                border-spacing: 0px;
-            }
-            .main
-            {
-                background-color: #ffffff;
-                margin: 0 auto;
-                height: 100%;
-                width: 60%;
-                min-width: 1000px;
-                min-height: 1000px;
-            }
-
-            .head
-            {
-                background-color: #1276CC;
-                height: 60px;
-                width: 100%;
-            }
-
-            td
-            {
-                min-width: 200px;
-            }
-        </style>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        <table class = "main" id = "table">
-            <tr class = "head">
-                <td width = "20%"></td>
-                <td>2</td>
-                <td width = "20%">3</td>
-            </tr>
 
-            <tr>
-                <td bgcolor = "#ececec" id = "fourthTd">4</td>
-                <td style = "width: 700px; height: 100%;">
+
+    <div id="wrapper">
+        <div id="container">
+
+            <div class="title">
+
+                <h1><a href="{{ path('homepage') }}">БЛА-БЛА-БЛА ЛОТЕРЕЯ</a></h1>
+
+            </div>
+
+            <div class="header"></div>
+
+            <div class="navigation">
+                <a href="{{ path('homepage') }}" id="active">Главная</a>
+                <a href="{{ path('lotery_list') }}">Наши лотереи</a>
+                <a href="{{ path('result') }}">Результаты</a>
+                <a href="{{ path('homepage') }}">Правила</a>
+                <a href="{{ path('homepage') }}">Вопросы</a>
+                <a href="{{ path('homepage') }}">Контакты</a>
+                <div class="clearer"></div>
+            </div>
+
+            <div class="main">
+
+                <div class="content">
                     {% block body %}{% endblock %}
+                </div>
+
+
+                <div class="bottom">
+
+                    <div class="left">
+
+                        <h2>Бла-бла-бла лотерея</h2>
+
+                        <ul class="block">
+                            <li><a href="{{ path('homepage') }}"><span>О нас</span></a></li>
+                            <li><a href="{{ path('homepage') }}"><span>Наши лотереи</span></a></li>
+                            <li><a href="{{ path('result') }}"><span>Результаты</span></a></li>
+                            <li><a href="{{ path('homepage') }}"><span>Правила</span></a></li>
+                        </ul>
+
+                    </div>
+
+                    <div class="right">
+
+                        <h2>Наши контакты</h2>
+
+
+                        <p>«Бла-бла-бла лотерея»
+                            Лицензия Министерства финансов Украины AВ№****** от **.**.****
+                            Адрес главного офиса: *****.</p>
+
+                        <p>+380 ХХ ХХХ ХХ ХХ</p>
+
+
+                    </div>
+
+                    <div class="clearer"></div>
+
+                </div>
+
+
+                <div class="footer">
+                    <!--
+                  <div class="left">
+                      Copyright &copy; 2007 <a href="index.html">Website.com</a>
+                  </div>
+
+                  <div class="right">
+                      <a href="http://templates.arcsin.se/category/website-templates/">Website template</a> by <a href="http://arcsin.se">Arcsin</a>
+                  </div>
+
+                  <div class="clearer"></div>
+                      -->
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
                     {% block javascripts %}{% endblock %}
-                </td>
-                <td bgcolor = "#ececec" id = "sixthTd">6</td>
-            </tr>
-
-
-        </table>
 
     </body>
 
