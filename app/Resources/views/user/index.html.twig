@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <p>Список зарегистрированных пользователей
+        <br>
+    <table>
+        <tr>
+            <td>Имя пользователя</td>
+            <td>Имя</td>
+            <td>Фамилия</td>
+            <td>Телефон</td>
+        </tr>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+                <td>{{ user.phone }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    </p>
+
+    <!--
+    <blockquote><p>Luctus vitae, dolor. Nunc mauris eros, vehicula id, fermentum non, semper ac, nisl. Cras sed purus non justo lobortis rhoncus. Morbi consectetuer augue</p></blockquote>
+
+    <p>Luctus vitae, dolor. Nunc mauris eros, vehicula id, fermentum non, semper ac, nisl. Cras sed purus non justo lobortis rhoncus. Morbi consectetuer augue.</p>
+     -->
+
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

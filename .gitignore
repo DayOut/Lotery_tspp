@@ -45,3 +45,6 @@
 /.web-server-pid
 database_schema.accdb
 .idea/workspace.xml
+*.xml
+.idea/workspace.xml
+.idea/workspace.xml

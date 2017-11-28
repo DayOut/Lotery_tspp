@@ -15,7 +15,7 @@ body {
 	background: #7C6F5C url(../img/bg.jpg);
 	color: #222;
 	font: normal 62.5% sans-serif;
-	padding: 2% 0;
+	/*padding: 2% 0;*/
 }
 
 a {color: #642;}
@@ -109,6 +109,29 @@ ul {padding: 0 2em 1.2em;}
 }
 .bottom .left,.bottom .right {width: 49%;}
 
+.spacer{
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.administrative {
+	position: fixed; /* Фиксированное положение */
+	text-align: right;
+	left: 0; top: 0; /* Левый нижний угол */
+	padding: 10px; /* Поля вокруг текста */
+	background: #2b2b2b; /* Цвет фона */
+	color: #fff; /* Цвет текста */
+	width: 100%; /* Ширина слоя */
+}
+
+.administrative a {
+	color: #DDDDDD;
+}
+
+.admin-links{
+    margin-right: 5%;
+}
+
 /* footer */
 .footer {
 	background: #332;
@@ -179,3 +202,5 @@ ul.block {
 
 .right .block,.right .block li {border-color: #DCDACC;}
 .right .block li a:hover {background: #F2F0EA;}
+
+/*--------------------------------------------------------------------------------------------------------------------*/

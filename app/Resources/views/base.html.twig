@@ -7,13 +7,35 @@
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
         <meta name="author" content=""/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {#<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">#}
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" media="screen"/>
+        <style>
+            @font-face {
+                font-family: Raleway; /* Имя шрифта */
+                src: url({{ asset('assets/fonts/Raleway-Medium.ttf') }}); /* Путь к файлу со шрифтом */
+            }
+
+        </style>
 
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
 
+    <div class="administrative">
+        <div class="admin-links">
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                Добро пожаловать, <a href="{{ path('profile') }}">{{ app.user.username }}</a>
 
+                <a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+                <p class="header-link"><a href="{{ path('fos_user_security_login') }}">вход</a>&nbsp;или&nbsp;<a href="{{ path('fos_user_registration_register') }}">регистрация</a></p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="spacer">&nbsp</div>
     <div id="wrapper">
         <div id="container">
 
