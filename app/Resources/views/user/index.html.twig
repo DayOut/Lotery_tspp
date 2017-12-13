@@ -3,9 +3,13 @@
 {% block body %}
 
 
-    <p>Список зарегистрированных пользователей
-        <br>
-    <table>
+
+    {% if ( app.user.username == "LoteryAdministrator") %}
+        <a href="{{ path('create_lotery')}}">Создать новую лотерею</a>
+        <p>Список зарегистрированных пользователей
+            <br>
+
+        <table>
         <tr>
             <td>Имя пользователя</td>
             <td>Имя</td>
@@ -20,7 +24,9 @@
                 <td>{{ user.phone }}</td>
             </tr>
         {% endfor %}
-    </table>
+        </table>
+    {% endif %}
+
     </p>
 
     <!--

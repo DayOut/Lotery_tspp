@@ -134,4 +134,8 @@ class Organizer
     {
         return $this->registration_address;
     }
+
+    public function __toString() {
+        return $this->owner;
+    }
 }

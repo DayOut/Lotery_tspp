@@ -26,7 +26,7 @@ class Lotery
     /**
      * @var organizer
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Organizer", inversedBy="organizer_id")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Organizer", inversedBy="$id")
      * @ORM\JoinColumn(name="organizer_id", onDelete="CASCADE")
      */
     protected $organizer;
@@ -74,7 +74,7 @@ class Lotery
     protected $sponsor;
 
     /**
-     * @var participant
+     * @var participant[]
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="$id")
      * @ORM\JoinColumn(name="user_id", onDelete="CASCADE")
@@ -88,6 +88,10 @@ class Lotery
     */
     protected $winner;
 
+    public function __construct()
+    {
+        $this->setLoteryStart(new \DateTime());
+    }
 
     /**
      * Get loteryId
@@ -315,8 +319,4 @@ class Lotery
         return $this->winner;
     }
 
-    public function __construct()
-    {
-        $this->participants = new ArrayCollection();
-    }
 }
