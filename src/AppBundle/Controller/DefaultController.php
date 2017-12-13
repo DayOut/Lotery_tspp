@@ -100,5 +100,33 @@ class DefaultController extends Controller
         ]);
     }
 
+    /**
+     * @Route("wind-a-winner/{id}", name="find_a_winner")
+     */
+    /*
+     * Изначально надеялись, что получится сделать случайный авыбор "победителя"
+     * но пока костыль за костылем ... 
+     * */
+    public function findAWinnerAction($id)
+    {
+        /** @var EntityManager $em */
+        $em = $this->get('doctrine')->getManager();
+
+        $lotery = $em->find(Lotery::class, $id);
+        if(!$lotery)
+        {
+            throw new NotFoundHttpException();
+        }
+        $query = $em->createQueryBuilder() // формируем запрос
+        ->from('AppBundle:User', 'c')
+            ->select('COUNT(1)')
+            ->getQuery();
+        $count = $query->execute();
+        $max = $count[0];
+        $lotery->setWinner($max);
+        $em->persist($lotery);
+        $em->flush();
+        return $this->redirectToRoute('litery_list');
+    }
 
 }

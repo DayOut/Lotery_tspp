@@ -278,7 +278,7 @@ class Lotery
      *
      * @return Lotery
      */
-    public function setParticipants(\AppBundle\Entity\Participant $participants = null)
+    public function setParticipants(\AppBundle\Entity\User $participants = null)
     {
         $this->participants = $participants;
 
@@ -302,7 +302,7 @@ class Lotery
      *
      * @return Lotery
      */
-    public function setWinner(\AppBundle\Entity\Participant $winner = null)
+    public function setWinner(\AppBundle\Entity\User $winner = null)
     {
         $this->winner = $winner;
 

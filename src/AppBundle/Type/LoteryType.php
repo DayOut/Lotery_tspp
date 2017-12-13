@@ -25,7 +25,10 @@ class LoteryType extends AbstractType
             ->add('ticket_price')
             ->add('tickets_quantity')
             ->add('sponsor')
-
+            ->add('winner')
+            // а вот тут уже идет тот код, за который мне стыдно
+            // ибо реализовать случайный выбор победителя так как планировали
+            // изначально - не вышло, а сроки горят очень сильно
         ;
     }
 

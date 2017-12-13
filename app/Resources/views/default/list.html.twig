@@ -12,6 +12,11 @@
             <td>Окончание</td>
             <td>Джекпот</td>
             <td>Спонсор</td>
+            <td>Победитель</td>
+        {% if( app.user.username == "LoteryAdministrator") %}
+            <td>Изменение</td>
+            <td>Проведение</td>
+        {% endif %}
         </tr>
         {% for lotery in loterys %}
             <tr>
@@ -22,6 +27,10 @@
                 <td>{{ lotery.jackpot }}</td>
                 <td>{{ lotery.sponsor }}</td>
                 <td>{{ lotery.getWinner }}</td>
+            {% if( app.user.username == "LoteryAdministrator") %}
+                <td><a href="{{ path('create_lotery', {'id':lotery.getLoteryId}) }}">Изменить</a></td>
+                <td><a href="{{ path('find_a_winner', {'id':lotery.getLoteryId}) }}">Проведение</a></td>
+            {% endif %}
             </tr>
         {% endfor %}
     </table>
